@@ -123,9 +123,9 @@ nav .menu ul li:last-child:hover {
   background-color: rgb(172, 41, 41);
 }
 
-/* для login*/
+/* для login и register*/
 
-.login-page {
+.login-page, .reg-page {
   background-color: rgb(249, 246, 249);
   height: 66vh;
   padding: 8% 0 0 0;
