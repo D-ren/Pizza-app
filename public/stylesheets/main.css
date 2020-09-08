@@ -9,7 +9,7 @@ a {
   text-decoration: none;
 }
 
-/* для home */
+/* для hungry */
 
 .hungry .main-text h1 {
   font-size: 60px;
@@ -49,13 +49,12 @@ nav .menu ul li:last-child:hover {
 
 .hungry {
   background-color: rgb(249, 246, 249);
-  height: 86vh;
-  width: 100vw;
+  height: 87.5vh;
 }
 
 .hungry .main-img img {
-  position: absolute;
-  margin: -360px 0 0 800px; 
+  margin: -24% 0 0 52%; 
+  width: 39%;
 }
 
 .hungry .main-text h1 {
@@ -67,7 +66,7 @@ nav .menu ul li:last-child:hover {
   padding: 210px 0 0 120px;
 }
 
-.hungry .main-text input {
+.hungry .main-text .btn {
   padding: 15px 20px 15px 20px;
   margin: 0 0 0 120px;
   border: none;
@@ -75,11 +74,83 @@ nav .menu ul li:last-child:hover {
   background-color: rgb(241, 63, 63);
   color: #fff;
   outline: none;
+  cursor: pointer;
 }
 
-.hungry .main-text input:hover {
+.hungry .main-text a:hover {
   transition: background-color 2s;
   background-color: rgb(172, 41, 41);
+}
+
+/* Для all-pizza */
+
+.pizza-text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 30px 0 30px 120px;
+}
+
+.all-pizza {
+  margin: 0 7% 0 7%;
+  height: 100vh;
+}
+
+.all-pizza .card img {
+  width: 90%;
+  padding: 0 0 15px 0;
+}
+
+.all-pizza .card {
+  max-width: 200px;
+  text-align: center;
+  display: block;
+  float: left;
+  margin: 0 0 55px 165px;
+}
+
+.all-pizza .card:nth-child(n+5) {
+  margin-bottom: 20px;
+}
+
+.all-pizza .card:first-child, .card:nth-child(5n) {
+  margin-left: 0;
+}
+
+.all-pizza .card:last-child {
+  margin-bottom: -50px;
+}
+
+.all-pizza .card:first-child, .card:nth-child(5n) {
+  padding: 0;
+}
+
+.all-pizza .card h3 {
+  font-weight: 400;
+}
+
+.all-pizza .card .size {
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 5px 0 5px 0;
+  margin: 15px 0;
+  border-radius: 40px; 
+  background-color: rgb(249, 246, 249);
+}
+
+.all-pizza .card .price {
+  margin-right: 40px;
+  font-weight: 600;
+}
+
+.all-pizza .card button {
+  outline: none;
+  cursor: pointer;
+  border: 3px solid rgb(241, 63, 63);
+  border-radius: 45px;
+  padding: 7px 20px;
+  background-color: #fff;
+  color: rgb(241, 63, 63);
 }
 
 /* для cartEmpty */
@@ -109,7 +180,7 @@ nav .menu ul li:last-child:hover {
   padding-bottom: 40px;
 }
 
-.cart input {
+.cart a {
   padding: 15px 20px 15px 20px;
   border: none;
   border-radius: 40px;
@@ -177,3 +248,4 @@ nav .menu ul li:last-child:hover {
   color: rgb(241, 63, 63);
   text-decoration: none;
 }
+
