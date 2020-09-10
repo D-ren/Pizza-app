@@ -3,10 +3,14 @@
 let scroll = document.getElementById('scroll');
 let btn = document.querySelector('.btn');
 
-function btnClick() {
+function btnScroll() {
   scroll.scrollIntoView({
     behavior: 'smooth'
   })
 }
 
-btn.addEventListener('click', btnClick);
+btn.addEventListener('click', btnScroll);
+
+
+// для всплывающего окна по нажатию на кнопку + Add
+
