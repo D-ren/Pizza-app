@@ -9,15 +9,12 @@ a {
   text-decoration: none;
 }
 
-/* для hungry */
-
-.hungry .main-text h1 {
-  font-size: 60px;
-}
+/* для navbar */
 
 nav {
   background-color: #fff;
   height: 12.5vh;
+  width: 90vw;
 }
 
 nav .logo a img {
@@ -28,7 +25,7 @@ nav .menu ul{
   list-style: none;
   display: flex;
   justify-content: space-between;
-  margin: -47px 120px 0 65vw;
+  margin: -47px 0 0 65vw;
 }
 
 nav .menu ul li:first-child {
@@ -49,6 +46,12 @@ nav .menu ul li:last-child {
 nav .menu ul li:last-child:hover {
   transition: background-color 2s;
   background-color: rgb(172, 41, 41);
+}
+
+/* для hungry */
+
+.hungry .main-text h1 {
+  font-size: 60px;
 }
 
 .hungry {
@@ -98,7 +101,7 @@ nav .menu ul li:last-child:hover {
 
 .all-pizza {
   margin: 0 7% 0 7%;
-  height: 100vh;
+  height: auto;
 }
 
 .all-pizza .card img {
@@ -137,7 +140,7 @@ nav .menu ul li:last-child:hover {
   padding: 5px 0 5px 0;
   margin: 15px 0;
   border-radius: 40px; 
-  background-color: rgb(249, 246, 249);
+  background-color: rgb(249, 249, 249);
 }
 
 .all-pizza .card .price {
@@ -160,9 +163,113 @@ nav .menu ul li:last-child:hover {
   color: #fff;
 }
 
-/* для cartEmpty */
+/* для cart  */
 
 .cart {
+  height: auto;
+  background-color: rgb(249, 246, 249);
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cart .order-container {
+  width: 50vw;
+}
+
+.cart .order-container .top-text {
+  padding: 8vh 0 2vh 0;
+  display: flex;
+}
+
+.cart .order-container .top-text h1 {
+  padding: 0 0 0 20px;
+}
+
+.cart .order-container .pizza-list .pizza {
+  display: flex;
+  align-items: center; 
+  padding: 30px 0;
+}
+
+.cart .order-container .pizza-list .pizza .text-order {
+  margin-left: 20px;
+  flex-grow: 1;
+}
+
+.cart .order-container .pizza-list .pizza .text-order span {
+  color: gray;
+}
+
+.cart .order-container .pizza-list .pizza .quantity-pizza {
+  flex-grow: 1;
+}
+
+.cart .order-container .pizza-list .pizza .price-pizza {
+  font-weight: bold;
+}
+
+.cart .order-container .pizza-list .pizza img {
+  width: 20%;
+}
+
+.text-right {
+  text-align: right;
+  margin: 30px 0 50px 0;
+}
+
+.text-right .total-amount {
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.text-right .total-amount .amount {
+  font-size: 24px;
+  margin-left: 10px;
+  color: rgb(241, 63, 63);
+}
+
+.text-right .contacts form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.text-right .btn { 
+  padding: 8px 17px;
+  border: none;
+  border-radius: 40px;
+  background-color: rgb(241, 63, 63);
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.text-right .btn:hover {
+  transition: background-color 2s;
+  background-color: rgb(172, 41, 41);
+}
+
+.text-right .contacts .phone-address {
+  outline-color :rgb(79, 197, 233);
+  background: #f2f2f2;
+  border: none;
+  width: 22vw;
+  margin: 0 0 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* для cartEmpty */
+
+.cart hr {
+  border: 0;
+  height: 1.5px;
+  background: lightgray;
+}
+
+.empty-cart {
   background-color: rgb(249, 246, 249);
   height: 87vh;
   width: 100vw;
@@ -171,23 +278,23 @@ nav .menu ul li:last-child:hover {
   align-items: center;
 }
 
-.cart h1 {
+.empty-cart h1 {
   font-size: 50px;
   font-weight: 500;
   margin-top: 40px;
 }
 
-.cart p {
+.empty-cart p {
   margin: 0 0 40px 0;
   text-align: center;
 }
 
-.cart img {
+.empty-cart img {
   height: 300px;
   padding-bottom: 40px;
 }
 
-.cart a {
+.empty-cart a {
   padding: 15px 20px 15px 20px;
   border: none;
   border-radius: 40px;
@@ -196,7 +303,7 @@ nav .menu ul li:last-child:hover {
   outline: none;
 }
 
-.cart input:hover {
+.empty-cart input:hover {
   transition: background-color 2s;
   background-color: rgb(172, 41, 41);
 }

@@ -1,6 +1,61 @@
 <%- include('layout/header.ejs') %>
 <%- include('layout/navbar.ejs') %>
 
+<!-- <section class='empty-cart'>
+  <h1>Cart Empty</h1>
+  <p>
+    You probably haven't ordered a pizza yet.<br>
+    To order a pizza, go to the main page.
+  </p>
+  <img src='img/empty-cart.png' alt=''>
+  <a href='/'>Go back</a>
+</section> -->
 
+<section class='cart'>
+  <div class="order-container">
+    <div class="top-text">
+      <img src='/img/cart-black.png' alt=''>
+      <h1>Order summary</h1>
+    </div>
+    <hr>
+    <div class="pizza-list">
+      <div class="pizza">
+        <img src='/img/piz1.png' alt=''>
+        <div class="text-order">
+          <h1>Marinara</h1>
+          <span>MEDIUM</span>
+        </div>
+        <span class='quantity-pizza'>1 Pcs</span>
+        <span class='price-pizza'>&#8372 150</span>
+      </div>
+      <div class="pizza">
+        <img src='/img/piz1.png' alt=''>
+        <div class="text-order">
+          <h1>Marinara</h1>
+          <span>MEDIUM</span>
+        </div>
+        <span class='quantity-pizza'>1 Pcs</span>
+        <span class='price-pizza'>&#8372 150</span>
+      </div>
+    </div>
+    <hr>
+    <div class="text-right">
+      <div class="total-amount">
+        <span class='text'>Total Amount:</span>
+        <span class='amount'>&#8372 300</span>
+      </div>
+      <div class="contacts">
+        <form action=''>
+          <input type='tel' class='phone-address' placeholder='Phone number'>
+          <input type='text' class='phone-address' placeholder='Address'>
+          <div>
+            <button type='submit' class='btn'>Order Now</button>
+          </div>
+        </form>
+      </div>
+      <!-- <a href='/login' class='btn'>Login to continue</a> -->
+    </div>
+  </div>
+</section>
 
 <%- include('layout/footer.ejs') %>

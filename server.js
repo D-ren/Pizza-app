@@ -8,7 +8,7 @@ const homeRoutes = require('./routes/home')
 const offersRoutes = require('./routes/offers')
 const loginRoutes = require('./routes/login')
 const registerRoutes = require('./routes/register')
-const emptyCartRoutes = require('./routes/cart') 
+const cartRoutes = require('./routes/cart') 
 
 // Используем шаблонизатор EJS
 
@@ -23,7 +23,7 @@ app.use('/', homeRoutes)
 app.use('/offers', offersRoutes)
 app.use('/login', loginRoutes)
 app.use('/register', registerRoutes)
-app.use('/cart', emptyCartRoutes)
+app.use('/cart', cartRoutes)
 
 
 
