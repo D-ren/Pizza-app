@@ -50,33 +50,57 @@ nav .menu ul li:last-child:hover {
 
 /* для hungry */
 
+@keyframes to-right {
+  from {right: 1.52vw;}
+  to {right: -25vw;}
+}
+
+.hungry .text-added {
+  z-index: 2;
+  position: fixed;
+  right: -25vw;
+  top: 30px;
+  width: 20vw;
+  padding: 9px 0 9px 15px;
+  border-radius: 50px;
+  background-color: rgb(169, 190, 92);
+  font-weight: 300;
+  font-size: 10px;
+  color: #fff;
+  transition: right 400ms cubic-bezier(.5, -.5, .5, 1.1);
+}
+
+
+
 .hungry .main-text h1 {
-  font-size: 60px;
+  font-size: 5vw;
 }
 
 .hungry {
+  display: flex;
+  justify-content: space-around;
   background-color: rgb(249, 246, 249);
   height: 87.5vh;
   width: auto;
 }
 
 .hungry .main-img img {
-  margin: -26.5% 0 0 52%; 
-  width: 39%;
+  width: 100%;
+  margin-top: 9vh;
+  filter: drop-shadow(0 0 5px gray);
 }
 
 .hungry .main-text h1 {
-  padding: 20px 0 20px 120px;
+  padding: 20px 0 20px 0;
 }
 
 .hungry .main-text h6 {
   font-weight: 500;
-  padding: 210px 0 0 120px;
+  padding: 210px 0 0 0;
 }
 
 .hungry .main-text .btn {
   padding: 15px 20px 15px 20px;
-  margin: 0 0 0 120px;
   border: none;
   border-radius: 40px;
   background-color: rgb(241, 63, 63);

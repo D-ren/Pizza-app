@@ -25,8 +25,27 @@ app.use('/login', loginRoutes)
 app.use('/register', registerRoutes)
 app.use('/cart', cartRoutes)
 
+// Connect to MongoDB
 
+// const connectToMongoDB = require('./keys/config.js');
+
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = connectToMongoDB.MONGODB_URI;
+// const client = new MongoClient(uri, { 
+//   useNewUrlParser: true, 
+//   useUnifiedTopology: true
+// });
+// client.connect((err, result) => {
+//   const collection = client.db("menu").collection("devices");
+  
+//   if(err) {
+//     client.close();
+//     return console.log(err);
+//   } else {
+//      app.listen(PORT, () => {
+//      console.log(`Listening on port ${PORT}`)
+//   })}
+// });
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`)
-})
+console.log(`Listening on port ${PORT}`)});

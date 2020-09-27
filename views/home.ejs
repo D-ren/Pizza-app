@@ -2,12 +2,17 @@
 <%- include('layout/navbar.ejs') %>
 
 <section class='hungry'>
+  <!-- всплывающее уведомление о том, что пицца добавлена в корзину -->
+  <div class='text-added'>
+    <p>Pizza added to cart!</p>
+  </div>
+  <!-- -->
+
   <div class="main-text">
     <h6><em>Are you hungry?</em></h6>
     <h1>Don't Wait !</h1>
     <button class='btn'>Order Now</button>
   </div>
-
   <div class='main-img'>
     <img src='img/pizza.png' alt=''>
   </div>
@@ -23,56 +28,56 @@
     <h3 class='name'>Margherita</h3>
     <p class='size'>small</p>
     <span class="price">&#8372 250</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
   <div class="card">
     <img src='/img/piz1.png' alt=''>
     <h3 class='name'>Marinara</h3>
     <p class='size'>medium</p>
     <span class="price">&#8372 150</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
   <div class="card">
     <img src='/img/piz1.png' alt=''>
     <h3 class='name'>Carbonara</h3>
     <p class='size'>small</p>
     <span class="price">&#8372 450</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
   <div class="card">
     <img src='/img/piz1.png' alt=''>
     <h3 class='name'>Americana</h3>
     <p class='size'>large</p>
     <span class="price">&#8372 250</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
   <div class="card">
     <img src='/img/piz1.png' alt=''>
     <h3 class='name'>Chicken Mushroom</h3>
     <p class='size'>medium</p>
     <span class="price">&#8372 350</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
   <div class="card">
     <img src='/img/piz1.png' alt=''>
     <h3 class='name'>Paneer pizza</h3>
     <p class='size'>small</p>
     <span class="price">&#8372 100</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
   <div class="card">
     <img src='/img/piz1.png' alt=''>
     <h3 class='name'>Vegies pizza</h3>
     <p class='size'>large</p>
     <span class="price">&#8372 250</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
   <div class="card">
     <img src='/img/piz1.png' alt=''>
     <h3 class='name'>Pepperoni</h3>
     <p class='size'>medium</p>
     <span class="price">&#8372 160</span>
-    <button>+ Add</button>
+    <button onclick='addAnimation()'>+ Add</button>
   </div>
 </section>
 
