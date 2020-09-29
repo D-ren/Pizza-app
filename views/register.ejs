@@ -4,13 +4,17 @@
 <section class="reg-page">
   <div class="form">
     <form class='reg-form'>
-      <input type='text' placeholder='name'>
-      <input type='password' placeholder='password'>
-      <input type='email' placeholder='email address'>
-      <button>Create</button>
+      <input type='text' name='username' placeholder='name'>
+      <div class='errors'></div>
+      <input type='password' name='password' placeholder='password'>
+      <div class='errors'></div>
+      <input type='email' name='email' placeholder='email address'>
+      <div class='errors'></div>
+      <button type='submit'>Create</button>
       <p class='message'>Already registered? <a href='/login'>Sign In</a></p>
     </form>
   </div>
 </section>
 
+<script src='javascripts/script.js'></script>
 <%- include('layout/footer.ejs') %>

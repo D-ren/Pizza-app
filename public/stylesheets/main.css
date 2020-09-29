@@ -50,11 +50,6 @@ nav .menu ul li:last-child:hover {
 
 /* для hungry */
 
-@keyframes to-right {
-  from {right: 1.52vw;}
-  to {right: -25vw;}
-}
-
 .hungry .text-added {
   z-index: 2;
   position: fixed;
@@ -216,20 +211,20 @@ nav .menu ul li:last-child:hover {
   padding: 30px 0;
 }
 
-.cart .order-container .pizza-list .pizza .text-order {
+.cart .text-order {
   margin-left: 20px;
   flex-grow: 1;
 }
 
-.cart .order-container .pizza-list .pizza .text-order span {
+.cart .text-order span {
   color: gray;
 }
 
-.cart .order-container .pizza-list .pizza .quantity-pizza {
+.cart .quantity-pizza {
   flex-grow: 1;
 }
 
-.cart .order-container .pizza-list .pizza .price-pizza {
+.cart .price-pizza {
   font-weight: bold;
 }
 
@@ -356,7 +351,7 @@ nav .menu ul li:last-child:hover {
   background: #f2f2f2;
   border: none;
   width: 100%;
-  margin: 0 0 20px;
+  margin-bottom: 20px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
@@ -390,4 +385,12 @@ nav .menu ul li:last-child:hover {
 .offers-bg {
   background-color: rgb(249, 246, 249);
   height: 87.5vh;
+}
+
+.reg-page .errors {
+  height: 10px;
+  color: red;
+  float: left;
+  position: relative;
+  top: -23px;
 }
