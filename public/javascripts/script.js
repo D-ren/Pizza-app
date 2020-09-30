@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('form');
   let isValidate = false;
+  let isValidate2 = false;
+  let isValidate3 = false;
 
   const regExpName = /^[A-Za-z0-9]{4,16}$/;
   const regExpPassword = /^[A-Za-z0-9]{6,18}$/;
@@ -31,19 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if(elem.value.length < 6 || elem.value.length > 18) {
           elem.nextElementSibling.textContent = 'Password must be 6 to 18 characters'
         }
-        isValidate = false;
+        isValidate2 = false;
       } else {
         elem.nextElementSibling.textContent = '';
-        isValidate = true;
+        isValidate2 = true;
       }
     }
     if (elem.name === 'email') {
       if (!regExpEmail.test(elem.value) && elem.value != '') {
         elem.nextElementSibling.textContent = 'Enter correct email';
-        isValidate = false;
+        isValidate3 = false;
       } else {
         elem.nextElementSibling.textContent = '';
-        isValidate = true;
+        isValidate3 = true;
       }
     }
   }
@@ -63,15 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (elem.tagName != 'BUTTON') {
         if(elem.value === '') {
           elem.nextElementSibling.textContent = 'This field is empty!';
-          isValidate = false;
         } else {
           elem.nextElementSibling.textContent = '';
         }
       }
     }
-    if (isValidate) {
+    if (isValidate === true && isValidate2 === true && isValidate3 === true) {
       submit();
       form.reset();
+      isValidate = false;
     }
   })
 })
