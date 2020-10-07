@@ -3,12 +3,26 @@ const app = express()
 const ejs = require('ejs')
 const path = require('path')
 const PORT = process.env.PORT || 3000
+const mongoose = require('mongoose')
 
 const homeRoutes = require('./routes/home')
 const offersRoutes = require('./routes/offers')
 const loginRoutes = require('./routes/login')
 const registerRoutes = require('./routes/register')
 const cartRoutes = require('./routes/cart') 
+
+// Connect to MongoDB
+
+const connectToMongoDB = require('./app/config/config.js');
+
+const url = connectToMongoDB.MONGODB_URI;
+mongoose.connect(url, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true});
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log('Databse conected...');
+}).catch(err => {
+  console.log('Connection failed...');
+})
 
 // Используем шаблонизатор EJS
 
@@ -25,27 +39,6 @@ app.use('/login', loginRoutes)
 app.use('/register', registerRoutes)
 app.use('/cart', cartRoutes)
 
-// Connect to MongoDB
-
-// const connectToMongoDB = require('./keys/config.js');
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = connectToMongoDB.MONGODB_URI;
-// const client = new MongoClient(uri, { 
-//   useNewUrlParser: true, 
-//   useUnifiedTopology: true
-// });
-// client.connect((err, result) => {
-//   const collection = client.db("menu").collection("devices");
-  
-//   if(err) {
-//     client.close();
-//     return console.log(err);
-//   } else {
-//      app.listen(PORT, () => {
-//      console.log(`Listening on port ${PORT}`)
-//   })}
-// });
-
 app.listen(PORT, () => {
-console.log(`Listening on port ${PORT}`)});
+  console.log(`Listening on port ${PORT}`)
+})

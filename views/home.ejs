@@ -23,62 +23,17 @@
 </div>
 
 <section class="all-pizza" id='scroll'>
-  <div class="card" id='scroll'>
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Margherita</h3>
-    <p class='size'>small</p>
-    <span class="price">&#8372 250</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
-  <div class="card">
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Marinara</h3>
-    <p class='size'>medium</p>
-    <span class="price">&#8372 150</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
-  <div class="card">
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Carbonara</h3>
-    <p class='size'>small</p>
-    <span class="price">&#8372 450</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
-  <div class="card">
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Americana</h3>
-    <p class='size'>large</p>
-    <span class="price">&#8372 250</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
-  <div class="card">
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Chicken Mushroom</h3>
-    <p class='size'>medium</p>
-    <span class="price">&#8372 350</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
-  <div class="card">
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Paneer pizza</h3>
-    <p class='size'>small</p>
-    <span class="price">&#8372 100</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
-  <div class="card">
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Vegies pizza</h3>
-    <p class='size'>large</p>
-    <span class="price">&#8372 250</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
-  <div class="card">
-    <img src='/img/piz1.png' alt=''>
-    <h3 class='name'>Pepperoni</h3>
-    <p class='size'>medium</p>
-    <span class="price">&#8372 160</span>
-    <button onclick='addAnimation()'>+ Add</button>
-  </div>
+  <% pizzas.forEach( (pizza) => { %>
+    <div class="card" id='scroll'>
+      <img src='/img/<%= pizza.image %>' alt=''>
+      <h3 class='name'><%= pizza.name %></h3>
+      <div>
+        <span class='size'><%= pizza.size %></span>
+      </div>
+      <span class="price">&#8372 <%= pizza.price %></span>
+      <button onclick='addAnimation()'>+ Add</button>
+    </div>
+  <% }) %>
 </section>
 
 

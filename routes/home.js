@@ -1,9 +1,12 @@
 const {Router} = require('express')
 const router = Router()
+const Menu = require('../app/models/menu')
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const pizzas = await Menu.find()
   res.render('home', {
-    title: 'Pizza Man'
+    title: 'Pizza Man',
+    pizzas: pizzas
   })
 })
 
