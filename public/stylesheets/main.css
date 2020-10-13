@@ -31,25 +31,33 @@ nav .menu ul li {
   margin-right: 1vw;
 }
 
-nav .menu ul li:last-child {
-  margin-right: 0;
-}
-
 nav .menu ul a {
   color: #000;
 }
 
+nav .menu ul li a:last-child {
+  display: flex;
+}
+
 nav .menu ul li:last-child {
   background-color: rgb(241, 63, 63);
-  padding: 10px 15px 3px 30px;
-  border-radius: 30px;
-  margin-top: -7px; 
+  padding: 8px 15px 8px 17px;
+  margin-top: -7px;
+  border-radius: 50px;
   cursor: pointer;
+  margin-right: 0;
+  color: #fff;
 }
 
 nav .menu ul li:last-child:hover {
   transition: background-color 2s;
   background-color: rgb(172, 41, 41);
+}
+
+nav .menu ul li .cartCoun {
+  color: #fff;
+  font-weight: 500;
+  padding-right: 5px;
 }
 
 /* для hungry */
@@ -66,7 +74,7 @@ nav .menu ul li:last-child:hover {
   font-weight: 300;
   font-size: 10px;
   color: #fff;
-  transition: right 400ms cubic-bezier(.5, -.5, .5, 1.1);
+  transition: right 650ms cubic-bezier(.5, -.5, .5, 1.1);
 }
 
 .hungry .main-text h1 {
@@ -186,10 +194,6 @@ nav .menu ul li:last-child:hover {
   justify-content: center;
 }
 
-.cart .order-container {
-  width: 50vw;
-}
-
 .cart .order-container .top-text {
   padding: 8vh 0 2vh 0;
   display: flex;
@@ -200,22 +204,29 @@ nav .menu ul li:last-child:hover {
 }
 
 .cart .order-container .pizza-list .pizza {
+  width: 50vw;
   display: flex;
-  align-items: center; 
-  padding: 30px 0;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 20px 0;
+}
+
+.cart .order-container .block-pizza {
+  width: 4vw;
+}
+
+.cart .order-container .block-first {
+  display: flex;
+  align-items: center;
+  width: 15vw;
 }
 
 .cart .text-order {
   margin-left: 20px;
-  flex-grow: 1;
 }
 
 .cart .text-order span {
   color: gray;
-}
-
-.cart .quantity-pizza {
-  flex-grow: 1;
 }
 
 .cart .price-pizza {
@@ -223,7 +234,7 @@ nav .menu ul li:last-child:hover {
 }
 
 .cart .order-container .pizza-list .pizza img {
-  width: 20%;
+  width: 50%;
 }
 
 .text-right {

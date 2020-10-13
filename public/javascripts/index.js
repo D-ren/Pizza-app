@@ -16,5 +16,5 @@ btn.addEventListener('click', btnScroll);
 
 function addAnimation() {
   document.getElementsByClassName('text-added')[0].style.right = '1.5vw';
-  setTimeout("document.getElementsByClassName('text-added')[0].style.right = '-25vw'", 800)
+  setTimeout("document.getElementsByClassName('text-added')[0].style.right = '-25vw'", 1100)
 }

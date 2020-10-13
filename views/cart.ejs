@@ -1,16 +1,7 @@
 <%- include('layout/header.ejs') %>
 <%- include('layout/navbar.ejs') %>
 
-<!-- <section class='empty-cart'>
-  <h1>Cart Empty</h1>
-  <p>
-    You probably haven't ordered a pizza yet.<br>
-    To order a pizza, go to the main page.
-  </p>
-  <img src='img/empty-cart.png' alt=''>
-  <a href='/'>Go back</a>
-</section> -->
-
+<% if(session.cart) { %>
 <section class='cart'>
   <div class="order-container">
     <div class="top-text">
@@ -19,30 +10,29 @@
     </div>
     <hr>
     <div class="pizza-list">
+      <% for(let pizza of Object.values(session.cart.items)) { %>
       <div class="pizza">
-        <img src='/img/piz1.png' alt=''>
-        <div class="text-order">
-          <h1>Marinara</h1>
-          <span>MEDIUM</span>
+        <div class='block-pizza block-first'>
+            <img src='/img/<%= pizza.item.image %>' alt=''>
+          <div class="text-order">
+            <h1><%= pizza.item.name %></h1>
+            <span><%= pizza.item.size %></span>
+          </div>
         </div>
-        <span class='quantity-pizza'>1 Pcs</span>
-        <span class='price-pizza'>&#8372 150</span>
-      </div>
-      <div class="pizza">
-        <img src='/img/piz1.png' alt=''>
-        <div class="text-order">
-          <h1>Marinara</h1>
-          <span>MEDIUM</span>
+        <div class='block-pizza'>
+          <span class='quantity-pizza'><%= pizza.qty %> Pcs</span>
         </div>
-        <span class='quantity-pizza'>1 Pcs</span>
-        <span class='price-pizza'>&#8372 150</span>
+        <div class='block-pizza'>
+          <span class='price-pizza'>&#8372 <%= pizza.item.price * pizza.qty %></span>
+        </div>
       </div>
+      <% } %>
     </div>
     <hr>
     <div class="text-right">
       <div class="total-amount">
         <span class='text'>Total Amount:</span>
-        <span class='amount'>&#8372 300</span>
+        <span class='amount'>&#8372 <%= session.cart.totalPrice %></span>
       </div>
       <div class="contacts">
         <form action=''>
@@ -57,5 +47,17 @@
     </div>
   </div>
 </section>
+<% } else { %>
+
+<section class='empty-cart'>
+  <h1>Cart Empty</h1>
+  <p>
+    You probably haven't ordered a pizza yet.<br>
+    To order a pizza, go to the main page.
+  </p>
+  <img src='img/empty-cart.png' alt=''>
+  <a href='/'>Go back</a>
+</section>
+<% } %>
 
 <%- include('layout/footer.ejs') %>
