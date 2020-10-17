@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('express-flash')
 const MongoDBStore = require('connect-mongo')(session)
+const passport = require('passport')
 
 
 const homeRoutes = require('./routes/home')
@@ -15,6 +16,8 @@ const offersRoutes = require('./routes/offers')
 const loginRoutes = require('./routes/login')
 const registerRoutes = require('./routes/register')
 const cartRoutes = require('./routes/cart') 
+
+const quest = require('./app/middlewares/quest')
 
 
 // Connect to MongoDB
@@ -50,6 +53,13 @@ app.use(session({
   cookie: { maxAge: 1000 * 60 * 60 * 24} //24 hours
 }))
 
+// Passport config
+
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.use(flash())
 
 // Статические файлы
@@ -57,11 +67,13 @@ app.use(flash())
 app.use(express.static(path.join(__dirname, '/public')))
 
 app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 
 //  Глобал мидлвейр
 
 app.use((req, res, next) => {
   res.locals.session = req.session
+  res.locals.user = req.user
   next()
 })
 
@@ -69,10 +81,13 @@ app.use((req, res, next) => {
 
 app.use('/', homeRoutes)
 app.use('/offers', offersRoutes)
-app.use('/login', loginRoutes)
-app.use('/register', registerRoutes)
+app.use('/login', quest, loginRoutes)
+app.use('/register', quest,  registerRoutes)
 app.use('/cart', cartRoutes)
+
 app.use('/update-cart', cartRoutes)
+app.use('/', loginRoutes) 
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)

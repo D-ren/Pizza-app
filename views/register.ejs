@@ -3,18 +3,20 @@
 
 <section class="reg-page">
   <div class="form">
-    <form class='reg-form'>
-      <input type='text' name='username' placeholder='name'>
-      <div class='errors'></div>
-      <input type='password' name='password' placeholder='password'>
-      <div class='errors'></div>
-      <input type='email' name='email' placeholder='email address'>
-      <div class='errors'></div>
+    <form action='/register' method='POST' class='reg-form'>
+      <% if(messages.error) { %>
+        <p class='err'><%= messages.error %></p>
+      <% } %>
+      <label for='username'>Name</label>
+      <input type='text' name='name' placeholder='name' value='<%= messages.name %>' id='username'>
+      <label for='password'>Password</label>
+      <input type='password' name='password' placeholder='password' id='password'>
+      <label for='email'>Email</label>
+      <input type='email' name='email' placeholder='email address' value='<%= messages.email %>' id='email'>
       <button type='submit'>Create</button>
-      <p class='message'>Already registered? <a href='/login'>Sign In</a></p>
+      <p class='message'>Already registered? <a href='/login'>Login</a></p>
     </form>
   </div>
 </section>
 
-<script src='javascripts/validate.js'></script>
 <%- include('layout/footer.ejs') %>

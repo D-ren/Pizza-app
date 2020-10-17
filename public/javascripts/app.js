@@ -8,7 +8,7 @@ function updateCart(pizza) {
 }
 
 addToCart.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
+  btn.addEventListener('click', () => {
     let pizza = JSON.parse(btn.dataset.pizza);
     updateCart(pizza);
   })

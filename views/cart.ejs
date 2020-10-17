@@ -34,6 +34,7 @@
         <span class='text'>Total Amount:</span>
         <span class='amount'>&#8372 <%= session.cart.totalPrice %></span>
       </div>
+      <% if(user) { %>
       <div class="contacts">
         <form action=''>
           <input type='tel' class='phone-address' placeholder='Phone number'>
@@ -43,12 +44,13 @@
           </div>
         </form>
       </div>
-      <!-- <a href='/login' class='btn'>Login to continue</a> -->
+      <% } else { %>
+      <a href='/login' class='btn'>Login to continue</a>
+      <% } %>
     </div>
   </div>
 </section>
 <% } else { %>
-
 <section class='empty-cart'>
   <h1>Cart Empty</h1>
   <p>

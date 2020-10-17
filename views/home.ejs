@@ -31,12 +31,10 @@
         <span class='size'><%= pizza.size %></span>
       </div>
       <span class="price">&#8372 <%= pizza.price %></span>
-      <button onclick='addAnimation()' data-pizza='<%= JSON.stringify(pizza) %>'
-      class='add-btn'>+ Add</button>
+      <button class='addAnimation add-btn' data-pizza='<%= JSON.stringify(pizza) %>'>+ Add</button>
     </div>
   <% }) %>
 </section>
-
 
 <script src='javascripts/index.js'></script>
 <script src='javascripts/app.js' defer></script>

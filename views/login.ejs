@@ -3,10 +3,15 @@
 
 <section class='login-page'>
   <div class="form">
-    <form class='login-form'>
-      <input type='text' placeholder='username'>
-      <input type='password' placeholder='password'>
-      <button>Log in</button>
+    <form class='login-form' action='/login' method='POST'>
+      <% if(messages.error) { %>
+        <p class='err'><%= messages.error %></p>
+      <% } %>
+      <label for='nameLog'>Name</label>
+      <input type='text' placeholder='Name' id='nameLog' name='name'>
+      <label for='passwordLog'>Password</label>
+      <input type='password' placeholder='password' id='passwordLog' name='password'>
+      <button type='submit'>Log in</button>
       <p class="message">Not registered? <a href='/register'>Create an account</a></p>
     </form>
   </div>

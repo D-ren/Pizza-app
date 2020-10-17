@@ -7,8 +7,16 @@
     <ul>
       <li><a href='/'>Menu</a></li>
       <li><a href='/offers'>Offers</a></li>
-      <li><a href='/login'>Login</a></li>
-      <li><a href='/register'>Register</a></li>
+      <% if(user) { %>
+        <li>
+          <form id='logout' action='/logout' method='POST'>
+            <a onclick="document.getElementById('logout').submit()" href='#'>Logout</a>
+          </form>
+        </li>
+      <% } else { %>
+        <li><a href='/login'>Login</a></li>
+        <li><a href='/register'>Register</a></li>
+      <% } %>
       <li><a href='/cart'>
         <p id='cartCounter' class='cartCoun'><%= session.cart ? session.cart.totalQty : '' %></p>
         <img src='img/cart.png' alt=''>
