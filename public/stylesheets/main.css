@@ -13,7 +13,7 @@ a {
 
 nav {
   background-color: #fff;
-  width: auto;
+  width: auto ;
   height: 12.5vh;
   display: flex;
   flex-direction: row;
@@ -28,6 +28,8 @@ nav .menu ul{
 }
 
 nav .menu ul li {
+  display:flex;
+  align-items: center;
   margin-right: 1vw;
 }
 
@@ -42,7 +44,6 @@ nav .menu ul li a:last-child {
 nav .menu ul li:last-child {
   background-color: rgb(241, 63, 63);
   padding: 8px 15px 8px 17px;
-  margin-top: -7px;
   border-radius: 50px;
   cursor: pointer;
   margin-right: 0;
@@ -77,10 +78,6 @@ nav .menu ul li .cartCoun {
   transition: right 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.hungry .main-text h1 {
-  font-size: 5vw;
-}
-
 .hungry {
   display: flex;
   justify-content: space-around;
@@ -96,6 +93,7 @@ nav .menu ul li .cartCoun {
 }
 
 .hungry .main-text h1 {
+  font-size: 5vw;
   padding: 20px 0 20px 0;
 }
 
@@ -187,7 +185,7 @@ nav .menu ul li .cartCoun {
 /* для cart  */
 
 .cart {
-  height: auto;
+  min-height: 87.5vh;
   background-color: rgb(249, 246, 249);
   width: auto;
   display: flex;
@@ -241,19 +239,17 @@ nav .menu ul li .cartCoun {
   text-align: right;
   margin: 30px 0 50px 0;
 }
-
 .text-right .total-amount {
   margin-bottom: 40px;
   font-weight: 600;
 }
-
 .text-right .total-amount .amount {
   font-size: 24px;
-  margin-left: 10px;
+  margin: -3.5px 0 0 10px;
   color: rgb(241, 63, 63);
 }
 
-.text-right .contacts form{
+.text-right .contacts form {
   display: flex;
   flex-direction: column;
   align-items: flex-end;

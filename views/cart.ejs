@@ -1,4 +1,4 @@
-<%- include('layout/header.ejs') %>
+<%- include('layout/head.ejs') %>
 <%- include('layout/navbar.ejs') %>
 
 <% if(session.cart) { %>
@@ -45,7 +45,7 @@
         </form>
       </div>
       <% } else { %>
-      <a href='/login' class='btn'>Login to continue</a>
+      <a href='/login' class='btn login-btn'>Login to continue</a>
       <% } %>
     </div>
   </div>

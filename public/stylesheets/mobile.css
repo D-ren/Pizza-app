@@ -1,0 +1,136 @@
+@media all and (max-width: 480px) { 
+  nav {
+    padding: 0;
+    height: 10vh;
+  }
+  nav ul a{
+    font-size: 3.5vw;
+    font-weight: 500;
+  }
+  nav .logo img {
+    margin: 6px 0 0 3vw;
+    max-width: 30vw;
+  }
+  nav .menu ul li a img {
+    max-width: 30%;
+  }
+  nav .menu ul li a p {
+    font-size: 3.5vw;
+  }
+  nav .menu ul li:last-child {
+    padding: 1vw 0vw 1vw 2.2vw;
+    margin-right: 3vw;
+  }
+
+
+  .hungry {
+    height: 90.5vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hungry .main-img img {
+    margin-top: 1vh;
+    max-width: 80%;
+  }
+  .hungry .main-text h6 {
+    padding-top: 0;
+  }
+  .hungry .main-text h1 {
+    font-size: 32px;
+    padding: 0 0 0 9px;
+    font-weight: 700;
+  }
+  .hungry .main-text .btn {
+    padding: 12px 17px;
+  }
+  .text-between .pizza-text {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+
+  .login-page, .reg-page {
+    height: 79vh;
+    padding-top: 11vh;
+  }
+  .form {
+    max-width: 220px;
+  }
+
+  .cart {
+    width: 100vw;
+  }
+  .cart .order-container .top-text {
+    display: flex;
+    justify-content: center;
+  }
+  .cart .order-container .pizza-list .pizza {
+    width: 60vw;
+  }
+  .cart .order-container .block-pizza:nth-child(2) {
+    margin-top: 15px;
+    width: 13vw;
+  }
+  .cart .order-container .block-pizza:last-child {
+    width: 13vw;
+  }
+  .cart .order-container .pizza-list .pizza {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cart .order-container .block-first {
+    width: 49vw;
+  }
+
+
+  .text-right .total-amount {
+    display: flex;
+    justify-content: center;
+  }
+  .text-right .contacts .phone-address {
+    width: 50vw;
+  }
+  .text-right .contacts form {
+    align-items: center;
+  }
+  .text-right .login-btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width:1024px) {
+  nav ul a{
+    font-size: 2vw;
+    font-weight: 500;
+  }
+
+
+  .hungry .main-img {
+    margin-right: 2.5vw;
+  }
+  .hungry .main-text h6 {
+    margin-left: 4vw;
+  }
+  .hungry .main-text h1 {
+    margin-left: 4vw;
+  }
+  .hungry .main-text .btn {
+    margin-left: 4vw;
+  }
+
+
+  .text-between .pizza-text {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+
+  .login-page, .reg-page {
+    height: 72vh;
+    padding-top: 15vh;
+  }
+}
