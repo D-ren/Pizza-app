@@ -1,7 +1,7 @@
 // для кнопки Order Now 
 
-let scroll = document.getElementById('scroll');
-let btn = document.querySelector('.btn');
+const scroll = document.getElementById('scroll');
+const btn = document.querySelector('.btn');
 
 function btnScroll() {
   scroll.scrollIntoView({
@@ -23,3 +23,12 @@ addAnim.forEach(elem => {
   }
 });
 
+
+// удаление оповощения в orders спустя X время
+
+const alertMsg = document.querySelector('#success-alert')
+if(alertMsg) {
+  setTimeout(() => {
+    alertMsg.remove()
+  }, 2000)
+}

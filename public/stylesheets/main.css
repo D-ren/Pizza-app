@@ -405,3 +405,58 @@ nav .menu ul li .cartCoun {
   background-color: rgb(249, 246, 249);
   height: 87.5vh;
 }
+
+
+/* Admin-orders */
+
+.orders {
+  background-color: rgb(249, 246, 249);
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.container {
+  padding-top: 3vh;
+  text-align: center;
+}
+
+.container h1 {
+  font-weight: 600;
+  margin-bottom: 3vh;
+}
+
+#success-alert {
+  color: white;
+  background-color: rgb(73, 179, 73);
+  padding: 0.7vw 2vh;
+  margin-bottom: 2vw;
+}
+
+#success-alert p {
+  font-size: 17px;
+}
+
+.orders table {
+  margin: auto;
+  background-color: white;
+  text-align: left;
+  width: 82vw;
+  border-collapse: collapse;
+}
+
+.orders table thead tr th {
+  padding: 1.5vh 1vw;
+  font-weight: 600;
+}
+
+.orders table tbody tr td{
+  padding: 1.5vh 1vw;
+  border: 0.5px solid #b1acac;
+}
+
+.orders table tbody tr td a {
+  color: rgb(241, 63, 63);
+}
+
+

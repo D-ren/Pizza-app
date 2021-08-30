@@ -1,5 +1,5 @@
-let addToCart = document.querySelectorAll('.add-btn')
-let cartCounter = document.querySelector('#cartCounter')
+const addToCart = document.querySelectorAll('.add-btn')
+const cartCounter = document.querySelector('#cartCounter')
 
 function updateCart(pizza) {
   axios.post('/update-cart', pizza).then((res) => {
@@ -13,3 +13,11 @@ addToCart.forEach((btn) => {
     updateCart(pizza);
   })
 })
+
+//remove alert message 
+const alertsMsg = document.querySelector('#success-alert')
+if(alertsMsg) {
+  setTimeout(() => {
+    alertsMsg.remove()
+  }, 2000)
+}

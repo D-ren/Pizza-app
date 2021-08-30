@@ -1,0 +1,64 @@
+<%- include('layout/head.ejs') %>
+<%- include('layout/navbar.ejs') %>
+
+<section class='orders'>
+  <div class='container'>
+    <h1>All orders</h1>
+  </div>
+    <% if(orders.length) {%>
+      <table>
+        <thead>
+          <tr>
+            <th>Orders</th>
+            <th>Customer</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Placed at</th>
+          </tr>
+        </thead>
+        <% orders.forEach(order => { %>
+          <tbody>
+            <tr>
+              <td>
+                  <p><%= order._id %></p>
+                  <!-- <div><%= order.items%></div> -->
+              </td>
+              <td><%= order.customerId.name %></td>
+              <td><%= order.address %></td>
+              <td>
+                  <div>
+                      <form action="/admin-orders" method="POST">
+                          <input type="hidden" name="orderId" value="<%= order._id %>">
+                          <select name="status" onchange="this.form.submit()">
+                              <option value="order_placed" <%- order.status === 'placed' ? 'selected' : '' %>>
+                                Placed
+                              </option>
+                              <option value="confirmed" <%- order.status === 'confirmed' ? 'selected' : '' %>>
+                                Confirmed
+                              </option>
+                              <option value="prepared" <%- order.status === 'prepared' ? 'selected' : '' %>>
+                                Prepared
+                              </option>
+                              <option value="delivered" <%- order.status === 'delivered' ? 'selected' : '' %>>
+                                  Delivered
+                              </option>
+                              <option value="completed" <%- order.status === 'completed' ? 'selected' : '' %>>
+                                  Completed
+                              </option>
+                          </select>
+                      </form>
+                  </div>
+              </td>
+              <td>
+                  <%= moment(order.createdAt).format('hh:mm A') %>
+              </td>
+            </tr>
+          </tbody>
+        <% }) %>
+      </table>
+    <% } else {%>
+      <p>Orders not found!</p>
+    <% } %>
+  </div>
+</section>
+<%- include('layout/footer.ejs') %>

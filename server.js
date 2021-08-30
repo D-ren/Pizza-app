@@ -1,4 +1,3 @@
-require('dotenv').config()
 const express = require('express')
 const app = express()
 const ejs = require('ejs')
@@ -9,6 +8,7 @@ const session = require('express-session')
 const flash = require('express-flash')
 const MongoDBStore = require('connect-mongo')(session)
 const passport = require('passport')
+require('dotenv').config()
 
 
 const homeRoutes = require('./routes/home')
@@ -16,14 +16,17 @@ const offersRoutes = require('./routes/offers')
 const loginRoutes = require('./routes/login')
 const registerRoutes = require('./routes/register')
 const cartRoutes = require('./routes/cart') 
+const ordersRoutes = require('./routes/orders')
+const adminOrdersRoutes = require('./routes/adminOrders')
 
 const quest = require('./app/middlewares/quest')
+const auth = require('./app/middlewares/auth')
+const admin = require('./app/middlewares/admin')
 
 
 // Connect to MongoDB
 
-const url = process.env.MONGODB_URI;
-mongoose.connect(url, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true});
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true});
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log('Databse conected...');
@@ -46,7 +49,7 @@ let mongoStore = new MongoDBStore({
 // Session config
 
 app.use(session({
-  secret: process.env.COOKIE_SECRET,
+  secret: process.env.SESSION_SEC,
   resave: false,
   saveUninitialized: false,
   store: mongoStore,
@@ -64,12 +67,12 @@ app.use(flash())
 
 // Статические файлы
 
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static('public'))
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-//  Глобал мидлвейр
+// 
 
 app.use((req, res, next) => {
   res.locals.session = req.session
@@ -85,8 +88,12 @@ app.use('/login', quest, loginRoutes)
 app.use('/register', quest,  registerRoutes)
 app.use('/cart', cartRoutes)
 
+app.use('/orders', auth, ordersRoutes)
+app.use('/admin-orders', admin, adminOrdersRoutes)
+
 app.use('/update-cart', cartRoutes)
 app.use('/', loginRoutes) 
+
 
 
 app.listen(PORT, () => {

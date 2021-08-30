@@ -6,8 +6,8 @@
   <div class='menu'>
     <ul>
       <li><a href='/'>Menu</a></li>
-      <li><a href='/offers'>Offers</a></li>
       <% if(user) { %>
+        <li><a href='/orders'>Orders</a></li>
         <li>
           <form id='logout' action='/logout' method='POST'>
             <a onclick="document.getElementById('logout').submit()" href='#'>Logout</a>

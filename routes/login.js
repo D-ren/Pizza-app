@@ -2,6 +2,7 @@ const {Router} = require('express')
 const router = Router()
 const passport = require('passport')
 
+
 router.get('/', (req, res) => {
   res.render('login', {
     title: 'Login'
@@ -11,6 +12,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res, next) => {
 
   const {name , password} = req.body
+
+  const _getRedirectUrl = (req) => {
+    return req.user.role === 'admin' ? '/admin-orders' : '/orders'
+  }
 
   //Вывод ошибки, если поля не заполнены
 
@@ -34,12 +39,11 @@ router.post('/', (req, res, next) => {
 
     // Вход в аккаунт
 
-    req.login(user, (err) => {
+    req.logIn(user, (err) => {
       if(err) {
-        req.flash('error', info.message)
         return next(err)
       }
-      res.redirect('/')
+      return res.redirect(_getRedirectUrl(req))
     })
     
   })(req, res, next)

@@ -36,9 +36,9 @@
       </div>
       <% if(user) { %>
       <div class="contacts">
-        <form action=''>
-          <input type='tel' class='phone-address' placeholder='Phone number'>
-          <input type='text' class='phone-address' placeholder='Address'>
+        <form action='/orders' method='POST'>
+          <input name='phone' type='tel' class='phone-address' placeholder='Phone number'>
+          <input name='address' type='text' class='phone-address' placeholder='Address'>
           <div>
             <button type='submit' class='btn'>Order Now</button>
           </div>
