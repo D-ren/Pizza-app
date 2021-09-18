@@ -23,7 +23,7 @@
           <% orders.forEach((order) => { %>
             <tr>
               <td>
-                <a class='link' href="/"><%= order._id %></a>
+                <a class='link' href="/single-order?id=<%= order._id%>"><%= order._id %></a>
               </td>
               <td>
                 <%= order.address %>

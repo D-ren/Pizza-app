@@ -1,3 +1,8 @@
+:root {
+  --primary-color: rgb(241, 63, 63);
+  --bgr-color: rgb(249, 246, 249);
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -42,7 +47,7 @@ nav .menu ul li a:last-child {
 }
 
 nav .menu ul li:last-child {
-  background-color: rgb(241, 63, 63);
+  background-color: var(--primary-color);
   padding: 8px 15px 8px 17px;
   border-radius: 50px;
   cursor: pointer;
@@ -81,7 +86,7 @@ nav .menu ul li .cartCoun {
 .hungry {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(249, 246, 249);
+  background-color: var(--bgr-color);
   height: 87.5vh;
   width: 100%;
 }
@@ -106,7 +111,7 @@ nav .menu ul li .cartCoun {
   padding: 15px 20px 15px 20px;
   border: none;
   border-radius: 40px;
-  background-color: rgb(241, 63, 63);
+  background-color: var(--primary-color);
   color: #fff;
   outline: none;
   cursor: pointer;
@@ -170,15 +175,15 @@ nav .menu ul li .cartCoun {
 .all-pizza .card button {
   outline: none;
   cursor: pointer;
-  border: 3px solid rgb(241, 63, 63);
+  border: 3px solid var(--primary-color);
   border-radius: 45px;
   padding: 1px 18px;
   background-color: #fff;
-  color: rgb(241, 63, 63);
+  color: var(--primary-color);
 }
 
 .all-pizza .card button:hover {
-  background-color: rgb(241, 63, 63);
+  background-color: var(--primary-color);
   color: #fff;
 }
 
@@ -186,7 +191,7 @@ nav .menu ul li .cartCoun {
 
 .cart {
   min-height: 87.5vh;
-  background-color: rgb(249, 246, 249);
+  background-color: var(--bgr-color);
   width: auto;
   display: flex;
   justify-content: center;
@@ -246,7 +251,7 @@ nav .menu ul li .cartCoun {
 .text-right .total-amount .amount {
   font-size: 24px;
   margin: -3.5px 0 0 10px;
-  color: rgb(241, 63, 63);
+  color: var(--primary-color);
 }
 
 .text-right .contacts form {
@@ -259,7 +264,7 @@ nav .menu ul li .cartCoun {
   padding: 8px 17px;
   border: none;
   border-radius: 40px;
-  background-color: rgb(241, 63, 63);
+  background-color: var(--primary-color);
   color: #fff;
   outline: none;
   cursor: pointer;
@@ -290,7 +295,7 @@ nav .menu ul li .cartCoun {
 }
 
 .empty-cart {
-  background-color: rgb(249, 246, 249);
+  background-color: var(--bgr-color);
   height: 87vh;
   width: 100vw;
   display: flex;
@@ -318,7 +323,7 @@ nav .menu ul li .cartCoun {
   padding: 15px 20px 15px 20px;
   border: none;
   border-radius: 40px;
-  background-color: rgb(241, 63, 63);
+  background-color: var(--primary-color);
   color: #fff;
   outline: none;
 }
@@ -331,7 +336,7 @@ nav .menu ul li .cartCoun {
 /* для login и register*/
 
 .login-page, .reg-page {
-  background-color: rgb(249, 246, 249);
+  background-color: var(--bgr-color);
   height: 74vh;
   padding: 6% 0 0 0;
 }
@@ -378,7 +383,7 @@ nav .menu ul li .cartCoun {
 
 .form button {
   outline: none;
-  background-color: rgb(241, 63, 63);
+  background-color: var(--primary-color);
   width: 100%;
   border: none;
   padding: 13px;
@@ -397,12 +402,12 @@ nav .menu ul li .cartCoun {
 }
 
 .form .message a {
-  color: rgb(241, 63, 63);
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 .offers-bg {
-  background-color: rgb(249, 246, 249);
+  background-color: var(--bgr-color);
   height: 87.5vh;
 }
 
@@ -410,7 +415,7 @@ nav .menu ul li .cartCoun {
 /* Admin-orders */
 
 .orders {
-  background-color: rgb(249, 246, 249);
+  background-color: var(--bgr-color);
   display: flex;
   flex-direction: column;
   
@@ -456,7 +461,112 @@ nav .menu ul li .cartCoun {
 }
 
 .orders table tbody tr td a {
-  color: rgb(241, 63, 63);
+  color: var(--primary-color);
 }
 
+/* Single-order */
+.status {
+  background-color: var(--bgr-color);
+  min-height: 87.5vh;
+}
 
+.status h1 {
+  font-size: 16px;
+}
+
+.status .divStat {
+  min-width: 82vw;
+  margin: auto;
+}
+
+.status .divStat .top-status {
+  padding-top: 4vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.status .divStat .top-status h6 {
+  background: white;
+  padding: 0.2vw;
+  border-radius: 25%;
+  color: green;
+  font-size: 15px
+}
+
+.status .divStat ul {
+  padding-top: 7vh;
+  text-align: left;
+  margin-left: 45%;
+  list-style: none;
+}
+
+.status .divStat ul li {
+  padding: 4vh 0;
+}
+
+.status .divStat ul li:last-child {
+  padding-bottom: 0;
+}
+
+.status .divStat ul li span {
+  position: relative;
+  padding-left: 20px;
+}
+
+/* dots */
+.status .divStat ul li span:before {
+  content: '';
+  position: absolute;
+  background: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 1px 10px #f9f6f9;
+}
+
+/* line */
+.status .divStat ul li {
+  position: relative;
+}
+
+.status .divStat ul li:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  left: -6px;
+  margin-top: 10px;
+  background: black;
+}
+
+/* last dot */
+.status .divStat ul li:last-child span:before {
+  box-shadow: 0 30px 1px 20px #f9f6f9;
+}
+
+/* line */
+.status .divStat ul .step-completed:before {
+  background: gainsboro;
+}
+
+/* dots */
+.status .divStat ul .step-completed span:before {
+  background: gainsboro;
+}
+
+/* text */
+.status .divStat ul .step-completed span {
+  color: gainsboro;
+}
+
+/* current status */
+.status .divStat ul .current span{
+  color: var(--primary-color);
+}
+
+.status .divStat ul .current span:before {
+  background: var(--primary-color);
+}

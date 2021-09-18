@@ -18,6 +18,7 @@ const registerRoutes = require('./routes/register')
 const cartRoutes = require('./routes/cart') 
 const ordersRoutes = require('./routes/orders')
 const adminOrdersRoutes = require('./routes/adminOrders')
+const singleOrderRoutes = require('./routes/singleOrder')
 
 const quest = require('./app/middlewares/quest')
 const auth = require('./app/middlewares/auth')
@@ -89,6 +90,7 @@ app.use('/register', quest,  registerRoutes)
 app.use('/cart', cartRoutes)
 
 app.use('/orders', auth, ordersRoutes)
+app.use('/single-order', auth, singleOrderRoutes)
 app.use('/admin-orders', admin, adminOrdersRoutes)
 
 app.use('/update-cart', cartRoutes)

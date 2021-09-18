@@ -21,3 +21,32 @@ if(alertsMsg) {
     alertsMsg.remove()
   }, 2000)
 }
+
+// change order status
+
+let hiddenInput = document.querySelector('#hiddenInput')
+let statuses = document.querySelectorAll('.stat')
+
+let order = hiddenInput ? hiddenInput.value : null
+order = JSON.parse(order)
+
+function updateStatus(order) {
+  let stepCompleted = true;
+
+  statuses.forEach(curStatus => {
+    let dataProp = curStatus.dataset.status;
+
+    if(stepCompleted) {
+      curStatus.classList.add('step-completed')
+    }
+
+    if(dataProp === order.status) {
+      stepCompleted = false;
+      if(curStatus.nextElementSibling) {
+        curStatus.nextElementSibling.classList.add('current')
+      }
+    }
+  })
+}
+
+updateStatus(order)

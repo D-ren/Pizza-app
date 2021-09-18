@@ -1,0 +1,21 @@
+<%- include('layout/head.ejs') %>
+<%- include('layout/navbar.ejs') %>
+
+<section class='status'>
+  <div class='divStat'>
+    <div class='top-status'>
+      <h1>Track delivery status</h1>
+      <h6><%= order._id %></h6>
+      <input id='hiddenInput' type='hidden' value='<%= JSON.stringify(order) %>'>
+    </div>
+    <ul>
+      <li class='stat' data-status='order_placed'><span>Order Placed</span></li>
+      <li class='stat' data-status='confirmed'><span>Order Confirmed</span></li>
+      <li class='stat' data-status='prepared'><span>Preparation</span></li>
+      <li class='stat' data-status='delivered'><span>Out for delivery</span></li>
+      <li class='stat' data-status='completed'><span>Complete</span></li>
+    </ul>
+  </div>
+</section>
+
+<%- include('layout/footer.ejs') %>
